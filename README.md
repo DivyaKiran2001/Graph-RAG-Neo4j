@@ -461,6 +461,20 @@ can combine retrieval strategies depending on the type of user question.
 
 ------------------------------------------------------------------------
 
+
+# helpp
+| Your code                              | What happens                                                    |
+| -------------------------------------- | --------------------------------------------------------------- |
+| `LLMGraphTransformer(...)`             | Creates nodes + relationships                                   |
+| `graph.add_graph_documents(...)`       | Stores graph in Neo4j                                           |
+| `OpenAIEmbeddings(...)`                | Initializes embedding model                                     |
+| `Neo4jVector.from_existing_graph(...)` | **Creates embeddings and stores them** for the configured nodes |
+| `embedding_node_property="embedding"`  | Says where embeddings are stored                                |
+| `from_existing_index(...)`             | Loads/uses existing vector index                                |
+| `retriever.invoke(question)`           | **Performs vector retrieval**                                   |
+| `graph.query(cypher_query)`            | **Performs Cypher/graph retrieval — no embeddings**             |
+
+
 # Official Neo4j References
 
 -   Neo4j GraphRAG Python package:
